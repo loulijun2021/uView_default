@@ -1,0 +1,43 @@
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+@import 'uview-ui/theme.scss';
+$u-type-primary:#255BDA;//#2979ff
+$u-type-primary-disabled:#A8BDF0;
+$u-type-primary-dark:#1E49AE;
+$u-type-primary-light: #EEF2FC;
+
+
+$u-type-warning: #f86e21;
+$u-type-warning-disabled: #FCC5A6;
+$u-type-warning-dark: #C6581A;
+$u-type-warning-light: #FEF4EE;
+
+$u-type-success: #00b578;
+$u-type-success-disabled: #99E1C9;
+$u-type-success-dark:#009160;
+$u-type-success-light: #EBF9F4;
+
+$u-type-error: #e63633;
+$u-type-error-disabled: #F5AFAD;
+$u-type-error-dark: #B82B29;
+$u-type-error-light: #FDEFEF;
+
+$u-type-info: #909399;
+$u-type-info-disabled: #c8c9cc;
+$u-type-info-dark: #82848a;
+$u-type-info-light: #f4f4f5;
+
+
+$u-main-color: #404956;
+$u-content-color: #808da1;
+$u-tips-color: #aeb8c6;
+$u-light-color: #c0c4cc;
+
+//背景颜色
+$u-bg-color: #f4f7f9;
+
+//边框颜色
+$u-border-color: #e4e7ed;
+

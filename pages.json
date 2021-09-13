@@ -1,0 +1,68 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				// "navigationBarTitleText": "uView-index"
+			}
+		},
+		{
+			"path": "pages/center/index",
+			"style": {
+				// "navigationBarTitleText": "uView-center"
+			}
+		}
+	    ,{
+            "path" : "pages/items/wildAnimals/wildAnimals",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/items/qiantangRiver/qiantangRiver",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/items/healthProducts/healthProducts",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "检察监督线索举报",
+        "navigationStyle":"custom",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+    //,
+	// "tabBar": {
+	//     "color": "#909399",
+	//     "selectedColor": "#303133",
+	//     "borderStyle": "black",
+	//     "backgroundColor": "#ffffff",
+	//     "list": [{
+	//         "pagePath": "pages/index/index",
+	//         "iconPath": "static/index.png",
+	//         "selectedIconPath": "static/index-selected.png",
+	//         "text": "首页"
+	//     }, {
+	//         "pagePath": "pages/center/index",
+	//         "iconPath": "static/center.png",
+	//         "selectedIconPath": "static/center-selected.png",
+	//         "text": "我"
+	//     }]
+	// }
+}
