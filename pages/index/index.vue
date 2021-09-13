@@ -28,6 +28,7 @@
 			</view>
 			<view class="top_phone" @click="makePhoneCall">非专项举报电话12309</view>
 		</view>
+		
 		<u-cell-group>
 			<view class="center_title">公益诉讼</view>
 			<u-cell-item @click="onClick('pages/items/wildAnimals/wildAnimals')" title="校园安全线索受理" :arrow="true">
