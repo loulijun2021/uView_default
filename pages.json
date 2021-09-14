@@ -22,6 +22,15 @@
                 "enablePullDownRefresh": false
             }
             
+        },{
+            "path" : "pages/items/wildAnimals/index2",
+            "style" :                                                                                    
+            {
+                // "navigationBarTitleText": "野生动物保护专项",
+                // "navigationStyle":"custom",
+                "enablePullDownRefresh": false
+            }
+            
         }
         ,{
             "path" : "pages/items/qiantangRiver/qiantangRiver",
@@ -35,6 +44,47 @@
             "path" : "pages/items/healthProducts/healthProducts",
             "style" :                                                                                    
             {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/items/mandatoryReporting/mandatoryReporting",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },{
+			"path" : "pages/items/mandatoryReporting/index2",
+			"style" :                                                                                    
+			{
+			    "navigationBarTitleText": "强制报告专项",
+			    "enablePullDownRefresh": false
+			}
+		},{
+			"path" : "pages/items/mandatoryReporting/index3",
+			"style" :                                                                                    
+			{
+			    "navigationBarTitleText": "强制报告专项举报",
+			    "enablePullDownRefresh": false
+			}
+		}
+        ,{
+            "path" : "pages/items/campusSecurity/campusSecurity",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/items/againstMinors/againstMinors",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             

@@ -8,6 +8,7 @@
                <u-form class="main-form" :error-type="['border-bottom','toast']" label-align="left" label-width="calc(112rpx + 18px)"
                    :model="form" ref="uForm">
                    <u-form-item required label="举报类型" prop="type">
+					   
                        <u-input v-model="form.type" placeholder="请选择类型" type="select" @click="show = true" />
                        <u-action-sheet :list="actionSheetList" v-model="show" @click="actionSheetCallback"></u-action-sheet>
                    </u-form-item>

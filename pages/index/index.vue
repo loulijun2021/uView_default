@@ -52,7 +52,7 @@
 				items: [{
 						'name': '公益诉讼',
 						'part': [{
-							'url': 'pages/items/wildAnimals/wildAnimals',
+							'url': 'pages/items/wildAnimals/index2',
 							'title': '野生动物保护专项',
 							'lable': '保护野生动物, 维护生态自然平衡'
 						}, {
@@ -68,7 +68,7 @@
 					{
 						'name': '未成年人保护',
 						'part': [{
-							'url': 'pages/items/wildAnimals/wildAnimals',
+							'url': 'pages/items/mandatoryReporting/index2',
 							'title': '强制报告专项',
 							'lable': '医疗、教育等行业人员发现孩子被侵害的线索，必须立即举报'
 						}, {
