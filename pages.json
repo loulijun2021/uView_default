@@ -14,90 +14,100 @@
 			"style": {
 				// "navigationBarTitleText": "uView-center"
 			}
-		}
-	    ,{
-            "path" : "pages/items/wildAnimals/wildAnimals",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false
-            }
-            
-        },{
-            "path" : "pages/items/wildAnimals/index2",
-            "style" :                                                                                    
-            {
-                // "navigationBarTitleText": "野生动物保护专项",
-                // "navigationStyle":"custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/items/qiantangRiver/qiantangRiver",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/items/healthProducts/healthProducts",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/items/mandatoryReporting/mandatoryReporting",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        },{
-			"path" : "pages/items/mandatoryReporting/index2",
-			"style" :                                                                                    
-			{
-			    "navigationBarTitleText": "强制报告专项",
-			    "enablePullDownRefresh": false
+		}, {
+			"path": "pages/items/wildAnimals/wildAnimals",
+			"style": {
+				"enablePullDownRefresh": false
 			}
-		},{
-			"path" : "pages/items/mandatoryReporting/index3",
-			"style" :                                                                                    
-			{
-			    "navigationBarTitleText": "强制报告专项举报",
-			    "enablePullDownRefresh": false
+
+		}, {
+			"path": "pages/items/wildAnimals/index2",
+			"style": {
+				// "navigationBarTitleText": "野生动物保护专项",
+				// "navigationStyle":"custom",
+				"enablePullDownRefresh": false
 			}
+
+		}, {
+			"path": "pages/items/wildAnimals/index3"
+		}, {
+			"path": "pages/items/qiantangRiver/qiantangRiver",
+			"style": {
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/items/healthProducts/healthProducts",
+			"style": {
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/items/mandatoryReporting/mandatoryReporting",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/items/mandatoryReporting/index2",
+			"style": {
+				"navigationBarTitleText": "强制报告专项",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/items/mandatoryReporting/index3",
+			"style": {
+				"navigationBarTitleText": "强制报告专项举报",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/items/campusSecurity/campusSecurity",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/items/campusSecurity/index2"
+		}, {
+			"path": "pages/items/campusSecurity/index3"
+		},
+		{
+			"path": "pages/items/againstMinors/againstMinors",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/items/againstMinors/index2"
+		},
+		{
+			"path": "pages/items/againstMinors/index3"
+		},
+		{
+			"path": "pages/items/familyProtection/familyProtection",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/items/familyProtection/index2"
+		}, {
+			"path": "pages/items/familyProtection/index3"
 		}
-        ,{
-            "path" : "pages/items/campusSecurity/campusSecurity",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/items/againstMinors/againstMinors",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "检察监督线索举报",
-        "navigationStyle":"custom",
+		"navigationStyle": "custom",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	}
-    //,
+	//,
 	// "tabBar": {
 	//     "color": "#909399",
 	//     "selectedColor": "#303133",

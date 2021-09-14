@@ -71,7 +71,7 @@
 		font-size: 32rpx;
 		letter-spacing: 2rpx;
 		font-weight: 500;
-		// text-align: left;
+		padding-bottom: 100rpx;
 		.big_title {
 			font-weight: bolder;
 			font-size: 48rpx;
@@ -112,6 +112,10 @@
 			color: #FFFFFF;
 			letter-spacing: 4rpx;
 			font-size: 32rpx;
+			margin-top: 30rpx;
+			position: fixed;
+			width: 91%;
+			bottom: 0;
 		}
 	
 		

@@ -1,5 +1,5 @@
 <template>
-    <formComponent title="校园安全线索受理" :actionSheetList="actionSheetList"></formComponent>
+    <formComponent title="侵害公益部分点位" :actionSheetList="actionSheetList"></formComponent>
 </template>
 
 <script>
@@ -10,20 +10,35 @@
             return {
                 actionSheetList: [{
                     value: 7001,
-                    text: '校园欺凌'
+                    text: '安全生产'
                 }, {
                     value: 7002,
-                    text: '视频安全'
+                    text: '个人信息保护'
                 }, {
                     value: 7003,
-                    text: '校园周边环境及设施安全',
+                    text: '生态环境和资源保护',
                 },{
                     value: 7004,
-                    text: '违法培训辅导站',
+                    text: '食品药品安全',
+                }, {
+                    value: 7005,
+                    text: '国有财产'
+                }, {
+                    value: 7006,
+                    text: '国有土地使用权出让',
+                },{
+                    value: 7007,
+                    text: '英雄烈士保护',
+                },{
+                    value: 7008,
+                    text: '其他侵害不特定人群的公共利益',
                 }
 				]
             }
         },
+		onLoad(option) {
+			console.log(option.title)
+		},
         methods: {
             
         },
