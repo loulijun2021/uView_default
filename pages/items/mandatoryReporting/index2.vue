@@ -14,7 +14,7 @@
 			
 			<view class="main_part2" v-for="item in items_part2">
 				<view class="small_title">{{item.small_title}}</view>
-				<view class="describe" v-for="it in item.describe">{{it.des}}</view>
+				<view class="describe" v-for="it in item.describe">{{it.des}}<b>{{it.pp_bolder}}</b></view>
 			</view>
 				
 			<button  class="footer_button" @click="getNext">发起举报</button>
@@ -49,7 +49,8 @@
 						{"des":"5、家庭暴力、虐待、遭人麻醉、下毒等情形的；"},
 						{"des":"6、未成年人被遗弃的；"},
 						{"des":"7、未成年人存在自杀、自残、坠楼、溺水、中毒等非正常伤害、死亡情形的；"},
-						{"des":"8、其他严重侵害未成年人身心健康的情形。"}
+						{"des":"8、其他严重侵害未成年人身心健康的情形。"},
+						{"pp_bolder":"人民检察院、接收举报线索的工作人员对报案人的信息予以保密。"}
 					]
 				}]
 			}

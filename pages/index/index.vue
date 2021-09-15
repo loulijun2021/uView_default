@@ -55,18 +55,7 @@
 							'url': 'pages/items/wildAnimals/index2',
 							'title': '侵害公益部分点位',
 							'lable': '此处需加一段描述'
-							// 'lable': '保护野生动物, 维护生态自然平衡'
-						}, 
-						// {
-						// 	'url': 'pages/items/qiantangRiver/qiantangRiver',
-						// 	'title': '钱塘江保护专项',
-						// 	'lable': '开展对钱塘江流域生态环境保护的监督'
-						// }, {
-						// 	'url': 'pages/items/healthProducts/healthProducts',
-						// 	'title': '保健品治理专项',
-						// 	'lable': '政治保健品虚假宣传，维护消费者权益'
-						// },
-						],
+						}],
 					},
 					{
 						'name': '未成年人保护',
@@ -83,7 +72,7 @@
 							'title': '家庭保护专项',
 							'lable': '此处需加一段描述'
 						}, {
-							'url': 'pages/items/healthProducts/index2',
+							'url': 'pages/items/againstMinors/index2',
 							'title': '其他侵害未成年人情形',
 							'lable': '严防各种侵犯未成年人的非法行为'
 						}]
@@ -97,7 +86,7 @@
 		},
 		methods: {
 			onClick(path) {
-				console.log(path)
+				// console.log(path)
 				this.$u.route({
 					url: path
 				})

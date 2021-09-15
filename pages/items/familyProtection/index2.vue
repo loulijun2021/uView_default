@@ -6,12 +6,17 @@
 				家庭保护专项
 			</view>
 			
+			<view style="margin-bottom: 40rpx;">
+				<b>
+					父母是孩子的第一任老师，是抚养、教育、保护未成年人的第一责任人。监护既是权利，也是义务，父母或其他监护人应当履行监护职责，不得侵犯孩子的合法权益。				</b>
+			</view>
+			
 			<view class="main_part2" v-for="item in items_part2">
 				<view class="small_title">{{item.small_title}}</view>
 				<view class="small_title_describe">
 					{{item.p}}<b>{{item.p_bolder}}</b>
 				</view>
-				<view class="describe" v-for="it in item.describe">{{it.des}}{{it.des2}}</view>
+				<view class="describe" v-for="it in item.describe">{{it.des}}{{it.des2}} <b>{{it.pp_bolder}}</b></view>
 				
 			</view>
 				
@@ -79,6 +84,15 @@
 						{"des":"发现身边存在监护缺失的未成年人，可积极提供线索、进行报告。"}
 					]
 				},{
+					"small_title":"困境、留守儿童救助：",
+					"describe":[
+						{"des":"困境儿童："},
+						{"des2":"困境儿童包括因家庭贫困导致生活、就医、就学等困难的儿童，因自身残疾导致康复、照料、护理和社会融入等困难的儿童，以及因家庭监护缺失或监护不当遭受虐待、遗弃、意外伤害、不法侵害等导致人身安全受到威胁或侵害的儿童。【国务院关于加强困境儿童保障工作的意见 （国发〔2016〕36号）】"},
+						{"des":"留守儿童："},
+						{"des2":"留守儿童是指外出务工连续三个月以上的农民托留在户籍所在地家乡，由父、母单方或其他亲属监护接受义务教育的适龄儿童少年。【国务院关于加强农村留守儿童关爱保护工作的意见】"},
+						{"des":"发现身边存在困境、留守儿童需要救助的，可积极提供线索、进行报告。"},
+						{"pp_bolder":"人民检察院、接收举报线索的工作人员对报案人的信息予以保密。"}
+						],
 					
 				}]
 			}
