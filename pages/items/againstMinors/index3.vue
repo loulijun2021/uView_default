@@ -3,7 +3,7 @@
 		
 		<u-cell-group>
 			<u-cell-item 	v-for="item in items"
-							@click="getNext"
+							@click="getNext(item.title)"
 							:title-style="{'color':'#000','font-size':'32rpx','letter-spacing':'2rpx'}"
 							:title="item.title"></u-cell-item>
 		</u-cell-group>
@@ -31,9 +31,9 @@
 			}
 		},
 		methods:{
-			getNext(){
+			getNext(title){
 				uni.navigateTo({
-					url:'./againstMinors'
+					url:'./againstMinors?title='+title+''
 				})
 			},
 			getBack(){

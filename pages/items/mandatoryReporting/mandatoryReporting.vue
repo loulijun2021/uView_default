@@ -1,5 +1,7 @@
 <template>
-    <formComponent title="强制专项报告" :actionSheetList="actionSheetList"></formComponent>
+    <formComponent 	title="强制专项报告" 
+					:placeholderSelectTitle="placeholderSelectTitle"
+					:actionSheetList="actionSheetList"></formComponent>
 </template>
 
 <script>
@@ -17,14 +19,12 @@
                 }, {
                     value: 7003,
                     text: '其他行业从业者报告',
-                }
-				]
+                }]
             }
         },
-        methods: {
-            
-        },
-
+		onLoad(option) {
+			this.placeholderSelectTitle = option.title
+		}
     }
 </script>
 

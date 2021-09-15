@@ -1,5 +1,7 @@
 <template>
-    <formComponent title="家庭保护专项" :actionSheetList="actionSheetList"></formComponent>
+    <formComponent 	title="家庭保护专项" 
+					:placeholderSelectTitle="placeholderSelectTitle"
+					:actionSheetList="actionSheetList"></formComponent>
 </template>
 
 <script>
@@ -22,7 +24,7 @@
             }
         },
 		onLoad(option) {
-			console.log(option.title)
+			this.placeholderSelectTitle = option.title
 		},
         methods: {
             

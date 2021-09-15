@@ -53,8 +53,8 @@
 						'name': '公益诉讼',
 						'part': [{
 							'url': 'pages/items/wildAnimals/index2',
-							'title': '侵害公益部分点位',
-							'lable': '此处需加一段描述'
+							'title': '侵害公益专项',
+							// 'lable': '此处需加一段描述'
 						}],
 					},
 					{
@@ -62,19 +62,19 @@
 						'part': [{
 							'url': 'pages/items/mandatoryReporting/index2',
 							'title': '强制报告专项',
-							'lable': '医疗、教育等行业人员发现孩子被侵害的线索，必须立即举报'
+							// 'lable': '医疗、教育等行业人员发现孩子被侵害的线索，必须立即举报'
 						}, {
 							'url': 'pages/items/campusSecurity/index2',
 							'title': '校园安全专项',
-							'lable': '全面净化校园环境，助力孩子健康成长'
+							// 'lable': '全面净化校园环境，助力孩子健康成长'
 						}, {
 							'url': 'pages/items/familyProtection/index2',
 							'title': '家庭保护专项',
-							'lable': '此处需加一段描述'
+							// 'lable': '此处需加一段描述'
 						}, {
 							'url': 'pages/items/againstMinors/index2',
 							'title': '其他侵害未成年人情形',
-							'lable': '严防各种侵犯未成年人的非法行为'
+							// 'lable': '严防各种侵犯未成年人的非法行为'
 						}]
 					}
 				]

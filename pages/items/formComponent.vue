@@ -8,7 +8,7 @@
                <u-form class="main-form" :error-type="['border-bottom','toast']" label-align="left" label-width="calc(112rpx + 18px)"
                    :model="form" ref="uForm">
                    <u-form-item required label="举报类型" prop="type">
-                       <u-input v-model="form.type" placeholder="请选择类型" type="select" @click="show = true" />
+                       <u-input v-model="form.type" :placeholder="placeholderSelectTitle" type="select" @click="show = true" />
                        <u-action-sheet :list="actionSheetList" v-model="show" @click="actionSheetCallback"></u-action-sheet>
                    </u-form-item>
                    <u-form-item required label="举报地点" prop="place">
@@ -35,6 +35,13 @@
                        <u-upload width="160" height="160" class="uploader" :form-data="{unique_id:uniqueId}" ref="uUpload"
                            :action="action" :file-list="fileList"></u-upload>
                    </u-form-item>
+				   <u-gap height="20" bg-color="#eee"></u-gap>
+				   <u-form-item label="举报人" prop="people">
+				       <u-input v-model="form.people" placeholder="举报人姓名(选填)" />
+				   </u-form-item>
+				   <u-form-item label="联系电话" prop="tel">
+				       <u-input v-model="form.tel" placeholder="举报人电话号码(选填)" />
+				   </u-form-item>
                </u-form>
                <view style="width: 100%;height:80px">
                    <u-card :foot-border-top="false" :head-border-bottom="false" margin="0" :show-head="false" :show-foot="false">
@@ -60,7 +67,7 @@
         getLocation
     } from '@/lib/util'
     export default {
-        props: ['actionSheetList', 'title'],
+        props: ['actionSheetList', 'title','placeholderSelectTitle'],
         components: {
             textCounter
         },
@@ -96,7 +103,9 @@
                     desc: '',
                     object: '',
                     name: '',
-                    phone: ''
+                    phone: '',
+					people:'',
+					tel:''
                 }
             }
         },
@@ -149,7 +158,9 @@
                             place,
                             object,
                             name,
-                            phone
+                            phone,
+							people,
+							tel
                         } = this.form
                         const {
                             REGION_CITY,
@@ -167,6 +178,8 @@
                             // reportStreet:'',//街道
                             reportContent: desc, //投诉内容
                             reportObj: object, //投诉对象
+							reportPeo:people,//投诉人
+							reportTel:tel,//投诉人联系电话
                             reportCode: this.actionSheetList.find(find => find.text == type).value //投诉专项编码
                         }
 

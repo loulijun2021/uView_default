@@ -17,14 +17,14 @@
 		}, {
 			"path": "pages/items/wildAnimals/wildAnimals",
 			"style": {
-				"navigationBarTitleText":"侵害公益部分点位",
+				"navigationBarTitleText":"侵害公益专项",
 				"enablePullDownRefresh": false
 			}
 
 		}, {
 			"path": "pages/items/wildAnimals/index2",
 			"style": {
-				"navigationBarTitleText": "侵害公益部分点位",
+				"navigationBarTitleText": "侵害公益专项",
 				// "navigationStyle":"custom",
 				"enablePullDownRefresh": false
 			}
@@ -32,7 +32,7 @@
 		}, {
 			"path": "pages/items/wildAnimals/index3",
 			"style":{
-				"navigationBarTitleText":"侵害公益部分点位"
+				"navigationBarTitleText":"侵害公益专项"
 			}
 		}, {
 			"path": "pages/items/qiantangRiver/qiantangRiver",
