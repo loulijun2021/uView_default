@@ -80,21 +80,21 @@
                 fileList: [],
                 loading: false,
                 rules: {
-                    type: [{
-                        required: true,
-                        message: '请选择举报类型',
-                        trigger: ['change', 'blur'],
-                    }],
-                    place: [{
-                        required: true,
-                        message: '请选择举报地点',
-                        trigger: ['change', 'blur'],
-                    }],
-                    desc: [{
-                        required: true,
-                        message: '请输入线索描述',
-                        trigger: ['change', 'blur'],
-                    }]
+                    // type: [{
+                    //     required: true,
+                    //     message: '请选择举报类型',
+                    //     trigger: ['change', 'blur'],
+                    // }],
+                    // place: [{
+                    //     required: true,
+                    //     message: '请选择举报地点',
+                    //     trigger: ['change', 'blur'],
+                    // }],
+                    // desc: [{
+                    //     required: true,
+                    //     message: '请输入线索描述',
+                    //     trigger: ['change', 'blur'],
+                    // }]
                 },
                 show: false,
                 form: {
@@ -110,6 +110,7 @@
             }
         },
         methods: {
+			
             actionSheetCallback(index) {
                 this.form.type = this.actionSheetList[index].text;
             },
@@ -149,66 +150,76 @@
 
             },
             submit() {
-                this.$refs.uForm.validate(valid => {
-                    if (valid) {
-                        this.loading = true
-                        const {
-                            type,
-                            desc,
-                            place,
-                            object,
-                            name,
-                            phone,
-							people,
-							tel
-                        } = this.form
-                        const {
-                            REGION_CITY,
-                            REGION_COUNTRY,
-                            REGION_PROVINCE,
-                            ADDRESS
-                        } = this.fullAddress
-                        let req = {
-                            uniqueId: this.uniqueId,
-                            reportUserName: name,
-                            reportUserPhone: phone,
-                            reportAddress: ADDRESS, //投诉地点
-                            reportProvince: REGION_PROVINCE, //省份
-                            reportCity: REGION_CITY, //城市
-                            // reportStreet:'',//街道
-                            reportContent: desc, //投诉内容
-                            reportObj: object, //投诉对象
-							reportPeo:people,//投诉人
-							reportTel:tel,//投诉人联系电话
-                            reportCode: this.actionSheetList.find(find => find.text == type).value //投诉专项编码
-                        }
-
-                        this.$u.api.commitReport(req).then(res => {
-                            this.loading = false
-                            if (res.status) {
-                                this.$refs.uForm.resetFields()
-                                this.$refs.uUpload.clear()
-                                this.next()
-                            } else {
-                                this.$refs.uToast.show({
-                                    title: res.message || '操作失败',
-                                    type: 'error',
-                                    position: 'top'
-                                })
-                            }
-
-                        }).catch(err => {
-                            console.log(err)
-                            this.loading = false
-                            this.$refs.uToast.show({
-                                title: res.message || '操作失败',
-                                type: 'error'
-                            })
-                        })
-                    } else {
-                        console.log(123)
-                    }
-                });
+				// try{
+					
+					this.$refs.uForm.validate(valid => {
+						const _this = this
+					    if (valid) {
+					        this.loading = true
+					        const {
+					            type,
+					            desc,
+					            place,
+					            object,
+					            name,
+					            phone,
+								people,
+								tel
+					        } = this.form
+					        // const {
+					        //     REGION_CITY,
+					        //     REGION_COUNTRY,
+					        //     REGION_PROVINCE,
+					        //     ADDRESS
+					        // } = this.fullAddress
+					        let req = {
+					            uniqueId: this.uniqueId,
+					            reportUserName: name,
+					            reportUserPhone: phone,
+					            // reportAddress: ADDRESS, //投诉地点
+					            // reportProvince: REGION_PROVINCE, //省份
+					            // reportCity: REGION_CITY, //城市
+								
+					            // reportStreet:'',//街道
+								
+					            reportContent: desc, //投诉内容
+					            reportObj: object, //投诉对象
+								reportPeo:people,//投诉人
+								reportTel:tel,//投诉人联系电话
+					            reportCode: this.actionSheetList.find(find => find.text == _this.form.type).value //投诉专项编码
+					        }
+							console.log(_this.form.type)
+					        this.$u.api.commitReport(req).then(res => {
+								console.log(res)
+					            this.loading = false
+					            if (res.status) {
+					                this.$refs.uForm.resetFields()
+					                this.$refs.uUpload.clear()
+					                this.next()
+					            } else {
+					                this.$refs.uToast.show({
+					                    title: res.message || '操作失败',
+					                    type: 'error',
+					                    position: 'top'
+					                })
+					            }
+					
+					        }).catch(err => {
+					            console.log(err)
+					            this.loading = false
+					            this.$refs.uToast.show({
+					                title: res.message || '操作失败',
+					                type: 'error'
+					            })
+					        })
+					    } else {
+					        console.log(123)
+					    }
+					});
+				// }catch(e){
+					// console.log(e)
+				// }
+              
             },
             customBack() {
                 uni.navigateTo({
@@ -231,6 +242,9 @@
             }
         },
         mounted() {
+			if(this.form.type === ''){
+				this.form.type = this.placeholderSelectTitle
+			}
             this.getUniqueId()
             this.$refs.uForm.setRules(this.rules)
         }

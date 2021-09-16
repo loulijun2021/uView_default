@@ -17,7 +17,7 @@
 		}, {
 			"path": "pages/items/wildAnimals/wildAnimals",
 			"style": {
-				"navigationBarTitleText":"侵害公益专项",
+				"navigationBarTitleText": "侵害公益专项",
 				"enablePullDownRefresh": false
 			}
 
@@ -31,8 +31,8 @@
 
 		}, {
 			"path": "pages/items/wildAnimals/index3",
-			"style":{
-				"navigationBarTitleText":"侵害公益专项"
+			"style": {
+				"navigationBarTitleText": "侵害公益专项"
 			}
 		}, {
 			"path": "pages/items/qiantangRiver/qiantangRiver",
@@ -73,13 +73,13 @@
 			}
 		}, {
 			"path": "pages/items/campusSecurity/index2",
-			"style":{
-				"navigationBarTitleText":"校园安全专项"
+			"style": {
+				"navigationBarTitleText": "校园安全专项"
 			}
 		}, {
 			"path": "pages/items/campusSecurity/index3",
-			"style":{
-				"navigationBarTitleText":"校园安全专项"
+			"style": {
+				"navigationBarTitleText": "校园安全专项"
 			}
 		},
 		{
@@ -92,14 +92,14 @@
 		},
 		{
 			"path": "pages/items/againstMinors/index2",
-			"style":{
-				"navigationBarTitleText":"其他侵害未成年人行为"
+			"style": {
+				"navigationBarTitleText": "其他侵害未成年人行为"
 			}
 		},
 		{
 			"path": "pages/items/againstMinors/index3",
-			"style":{
-				"navigationBarTitleText":"其他侵害未成年人行为"
+			"style": {
+				"navigationBarTitleText": "其他侵害未成年人行为"
 			}
 		},
 		{
@@ -111,16 +111,27 @@
 
 		}, {
 			"path": "pages/items/familyProtection/index2",
-			"style":{
-				"navigationBarTitleText":"家庭保护专项"
+			"style": {
+				"navigationBarTitleText": "家庭保护专项"
 			}
 		}, {
 			"path": "pages/items/familyProtection/index3",
-			"style":{
-				"navigationBarTitleText":"家庭保护专项"
+			"style": {
+				"navigationBarTitleText": "家庭保护专项"
+			}
+		}, {
+			"path": "pages/items/record/record",
+			"style": {
+				"navigationBarTitleText": "我的举报",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/items/record/queryRecord",
+			"style": {
+				"navigationBarTitleText": "举报查询",
+				"enablePullDownRefresh": false
 			}
 		}
-
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -41,6 +41,32 @@
 			</u-cell-item>
 		</u-cell-group>
 		
+		
+		<u-cell-group>
+			<u-cell-item
+			@click="onClick('pages/items/record/record')"
+			class="record"
+			title="我的举报记录"
+			:title-style="{'margin-left':'47%','font-size':'28rpx','color':'#d2d2d2','letter-spacing': '2rpx'}" 
+			style="height: 68rpx;"
+			></u-cell-item>
+		</u-cell-group>
+		
+		<!-- <u-gap height="20" bg-color="#eee"></u-gap> -->
+		
+		<!-- <view class="wrap">
+			<u-swiper 	:list="list" 
+						mode="rect"
+						 :title="true" 
+						 @click="clickImg(list)"
+						 img-mode="aspectFit"
+						 :title-style="{'color':'red','background-color':'none'}"
+						 :autoplay="false"
+						 interval="5000">
+			
+			</u-swiper>
+		</view> -->
+		
 		<view class="footer">杭州市人民检察院 0571-88810901</view>
 	</view>
 </template>
@@ -77,16 +103,31 @@
 							// 'lable': '严防各种侵犯未成年人的非法行为'
 						}]
 					}
-				]
-
+				],
+				// list: [{
+				// 		image: '../../static/gyss.png',
+				// 		title: '什么是专项公益诉讼',
+						
+				// 	},
+				// 	{
+				// 		image: '../../static/index_part2_1.png',
+				// 		title: '强制报告是什么'
+				// 	},
+				// 	{
+				// 		image: '../../static/index_part2_2.png',
+				// 		title: '什么是未成年人法律法律监督？'
+				// 	}
+				// ],
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
+			// clickImg(param){
+			// 	console.log(param)
+			// },
 			onClick(path) {
-				// console.log(path)
 				this.$u.route({
 					url: path
 				})
@@ -95,7 +136,8 @@
 				uni.makePhoneCall({
 					phoneNumber: '12309'
 				})
-			}
+			},
+			
 		}
 	}
 </script>
@@ -185,12 +227,25 @@
 		margin: auto 30rpx;
 		padding-top: 20rpx;
 		font-size: 26rpx;
+		margin: ao;
 	}
 
 	.u-cell {
 		height: 140rpx;
 	}
-
+	
+	.record{
+		padding-right: 40%;
+	}
+	
+	// .wrap {
+		// padding: 20rpx 0;
+		// background-color: #eee;
+		// .u-swiper-image[data-v-a5b2d580]{
+		// 	width: 30% !important;
+		// }
+	// }
+	
 	.footer {
 		position: fixed;
 		bottom: 2%;
