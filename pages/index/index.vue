@@ -42,12 +42,11 @@
 		</u-cell-group>
 		
 		
-		<u-cell-group>
+		<u-cell-group style="display: flex;justify-content: center;">
 			<u-cell-item
 			@click="onClick('pages/items/record/record')"
-			class="record"
 			title="我的举报记录"
-			:title-style="{'margin-left':'47%','font-size':'28rpx','color':'#d2d2d2','letter-spacing': '2rpx'}" 
+			:title-style="{'font-size':'28rpx','color':'#d2d2d2','letter-spacing': '2rpx'}" 
 			style="height: 68rpx;"
 			></u-cell-item>
 		</u-cell-group>
@@ -232,10 +231,6 @@
 
 	.u-cell {
 		height: 140rpx;
-	}
-	
-	.record{
-		padding-right: 40%;
 	}
 	
 	// .wrap {
