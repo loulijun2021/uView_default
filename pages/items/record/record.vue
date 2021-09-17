@@ -4,15 +4,38 @@
 			<u-tabs-swiper ref="uTabs" :list="list" :current="current" @change="tabsChange" :is-scroll="false"
 				swiperWidth="750" bar-height="2"></u-tabs-swiper>
 		</view>
-		<swiper :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
+
+		<swiper  style="height: 700px;" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
 			<swiper-item class="swiper-item" v-for="(item, index) in list" :key="index">
-				<scroll-view scroll-y style="height: 800rpx;width: 100%; text-align: center;"
+				<scroll-view scroll-y style="height: 100%; width: 100%; text-align: center;"
 					@scrolltolower="onreachBottom">
-					{{item.content}}
+					
+					<u-table style="" bg-color="#f5f5f5" border-color="#f5f5f5">
+						<u-tr class="u-tr">
+							<u-th class="u-th">时间</u-th>
+							<u-th class="u-th">类型</u-th>
+							<u-th class="u-th" v-if="index===0">状态</u-th>
+						</u-tr>
+						
+						<!-- <view v-if="item.items.time===undefined">
+							<view class="noRecord">暂无举报记录</view>
+						</view> -->
+						<view>
+							<u-tr class="u-tr" v-for="it in item.items">
+								<u-td class="u-td">{{it.time}}</u-td>
+								<u-td class="u-td">{{it.type}}</u-td>
+								<u-td class="u-td" v-if="index===0">{{it.status}}</u-td>
+							</u-tr>
+						</view>
+						
+					</u-table>
+					
 				</scroll-view>
 			</swiper-item>
 		</swiper>
 		<button class="footer_button" @click="getNext">查询举报</button>
+
+
 	</view>
 </template>
 
@@ -22,13 +45,87 @@
 			return {
 				list: [{
 					name: '全部',
-					content: '我是全部内容'
+					// items:[{time:'',type:'',status:''}]
+					items:[
+						{time: '2021-01-01',type: '其他侵害不特定人群的公共利益',status: '已接收'},
+						{time: '2021-01-02',type: '公益诉讼',status: '已接收'},
+						{time: '2021-01-03',type: '校园安全',status: '已接收'},
+						{time: '2021-03-01',type: '监护缺失',status: '已提交'},
+						{time: '2021-04-01',type: '校园安全',status: '已提交'},
+						{time: '2021-05-01',type: '校园安全',status: '已提交'},
+						{time: '2021-06-06',type: '监护侵害、监护不当',status: '已提交'},
+						{time: '2021-01-01',type: '校园安全',status: '已接收'},
+						{time: '2021-01-02',type: '公益诉讼',status: '已接收'},
+						{time: '2021-01-03',type: '校园安全',status: '已接收'},
+						{time: '2021-03-01',type: '监护缺失',status: '已提交'},
+						{time: '2021-04-01',type: '校园安全',status: '已提交'},
+						{time: '2021-05-01',type: '校园安全',status: '已提交'},
+						{time: '2021-06-06',type: '监护侵害、监护不当',status: '已提交'},
+						{time: '2021-01-01',type: '测试测试测试测试2311',status: '已接收'},
+						{time: '2021-01-02',type: '公益',status: '已接收'},
+						{time: '2021-01-03',type: '测试测试测试测试',status: '已接收'},
+						{time: '2021-03-01',type: '监护缺失',status: '已提交'},
+						{time: '2021-04-01',type: '安全ss',status: '已提交'},
+						{time: '2021-05-01',type: '校园全',status: '已提交'},
+						{time: '2021-06-06',type: '监护测试数据侵害、监护不当',status: '已提交'},
+						{time: '2021-01-01',type: '校园安全',status: '已接收'},
+						{time: '2021-01-02',type: '公益诉讼',status: '已接收'},
+						{time: '2021-01-03',type: '校园安全校园安全',status: '已接收'},
+						{time: '2021-03-01',type: '监护缺失222',status: '已提交'},
+						{time: '2021-04-01',type: '校园安全1',status: '已提交'},
+						{time: '2021-05-01',type: '校园安全',status: '已提交'},
+						{time: '2021-06-06',type: '监护侵害、监护不当',status: '已提交'},
+						{time: '2021-01-02',type: '公益诉讼',status: '已提交'},
+						{time: '2021-01-03',type: '校园安全',status: '已提交'},
+						{time: '2021-03-01',type: '监护缺失',status: '已提交'},
+						{time: '2021-04-01',type: '校园安全',status: '已提交'},
+						{time: '2021-05-01',type: '校园安全',status: '已提交'},
+						{time: '2021-06-06',type: '监护侵害、监护不当',status: '已提交'},
+						{time: '2021-01-01',type: '校园安全',status: '已提交'},
+						{time: '2021-01-02',type: '公益诉讼',status: '已提交'},
+						{time: '2021-01-03',type: '校园安全',status: '已提交'},
+						{time: '2021-03-01',type: '监护缺失',status: '已提交'},
+						{time: '2021-04-01',type: '校园安全',status: '已提交'},
+						{time: '2021-05-01',type: '校园安全',status: '已提交'},
+						{time: '2021-06-06',type: '监护侵害、监护不当',status: '已提交'},
+					]
+					
 				}, {
 					name: '已提交',
-					content: '我是已提交内容'
+					items:[
+						{time: '2021-01-01',type: '其他侵害不特定人群的公共利益'},
+						{time: '2021-01-02',type: '公益诉讼'},
+						{time: '2021-01-03',type: '校园安全'},
+						{time: '2021-03-01',type: '监护缺失'},
+						{time: '2021-04-01',type: '校园安全'},
+						{time: '2021-05-01',type: '校园安全'},
+						{time: '2021-06-06',type: '监护侵害、监护不当'},
+						{time: '2021-01-01',type: '其他侵害不特定人群的公共利益'},
+						{time: '2021-01-02',type: '公益诉讼'},
+						{time: '2021-01-03',type: '校园安全'},
+						{time: '2021-03-01',type: '监护缺失'},
+						{time: '2021-04-01',type: '校园安全'},
+						{time: '2021-05-01',type: '校园安全'},
+						{time: '2021-06-06',type: '监护侵害、监护不当'},
+						
+					]
 				}, {
 					name: '已接收',
-					content: '我是已接收内容'
+					items:[
+						{time: '2021-01-01',type: '其他侵害不特定人群的公共利益'},
+						{time: '2021-01-03',type: '校园安全'},
+						{time: '2021-03-01',type: '监护缺失'},
+						{time: '2021-04-01',type: '校园安全'},
+						{time: '2021-05-01',type: '校园安全'},
+						{time: '2021-06-06',type: '监护侵害、监护不当'},
+						{time: '2021-01-01',type: '其他侵害不特定人群的公共利益'},
+						{time: '2021-01-02',type: '公益诉讼'},
+						{time: '2021-01-03',type: '校园安全'},
+						{time: '2021-03-01',type: '监护缺失'},
+						{time: '2021-04-01',type: '校园安全'},
+						{time: '2021-05-01',type: '校园安全'},
+						{time: '2021-06-06',type: '监护侵害、监护不当'},		
+					]
 				}],
 				// 因为内部的滑动机制限制，请将tabs组件和swiper组件的current用不同变量赋值
 				current: 0, // tabs组件的current值，表示当前活动的tab选项
@@ -71,6 +168,17 @@
 	page {
 		background-color: #f5f5f5;
 		// padding:0 8rpx;
+
+	}
+
+	.u-td,.u-th{
+		margin: auto;
+	}
+	
+	.noRecord{
+		color: #a1a1a1;
+		margin-top: 300rpx;
+		letter-spacing: 4rpx;
 	}
 
 	.footer_button {
@@ -81,6 +189,7 @@
 		margin-top: 30rpx;
 		position: fixed;
 		width: 91%;
+		margin-left: 4.5%;
 		bottom: 0;
 	}
 </style>
