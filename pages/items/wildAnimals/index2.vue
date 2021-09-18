@@ -12,7 +12,9 @@
 				<view class="describe">{{item.describe}}</view>
 			</view>
 			
-			<button class="footer_button" @click="getNext">发起举报</button>
+			<view class="footer">
+				<button class="footer_button" @click="getNext">发起举报</button>
+			</view>
 
 		</view>
 	</view>
@@ -91,15 +93,25 @@
 			}
 		}
 		
-		.footer_button {
-			background-color: #408ce2;
-			color: #FFFFFF;
-			letter-spacing: 4rpx;
-			font-size: 32rpx;
-			margin-top: 30rpx;
+		
+		.footer{
+			width: 102%;
+			background-color: #FFFFFF;
+			height: 110rpx;
 			position: fixed;
-			width: 91%;
-			bottom: 0;
+			bottom: -1px;
+			margin-top: 30rpx;
+			margin-left: -36rpx;
+			padding-top: 16rpx;
+			.footer_button {
+				background-color: #408ce2;
+				color: #FFFFFF;
+				letter-spacing: 4rpx;
+				font-size: 32rpx;
+				width: 95%;
+				
+			}
 		}
+		
 	}
 </style>

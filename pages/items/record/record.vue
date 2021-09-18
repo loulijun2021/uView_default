@@ -33,8 +33,10 @@
 				</scroll-view>
 			</swiper-item>
 		</swiper>
-		<button class="footer_button" @click="getNext">查询举报</button>
 
+		<view class="footer">
+			<button class="footer_button" @click="getNext">查询举报</button>
+		</view>
 
 	</view>
 </template>
@@ -181,15 +183,22 @@
 		letter-spacing: 4rpx;
 	}
 
-	.footer_button {
-		background-color: #408ce2;
-		color: #FFFFFF;
-		letter-spacing: 4rpx;
-		font-size: 32rpx;
-		margin-top: 30rpx;
-		position: fixed;
-		width: 91%;
-		margin-left: 4.5%;
-		bottom: 0;
-	}
+		.footer{
+			width: 100%;
+			background-color: #FFFFFF;
+			height: 110rpx;
+			position: fixed;
+			bottom: -1px;
+			margin-top: 30rpx;
+			
+			padding-top: 16rpx;
+			.footer_button {
+				background-color: #408ce2;
+				color: #FFFFFF;
+				letter-spacing: 4rpx;
+				font-size: 32rpx;
+				width: 95%;
+				
+			}
+		}
 </style>
