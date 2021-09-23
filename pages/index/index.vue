@@ -36,7 +36,7 @@
 				:label="item.lable"
 				v-for="(item,index) in itemCard.part"
 				:title-style="{'font-size':'36rpx','color':'#000','letter-spacing': '2rpx'}" :arrow="true">
-				<view class="icon" slot="icon" :style="{'background-image': 'url(../../static/index_part'+(indexCard+1)+'_'+(index+1)+'.png)'}">
+				<view class="icon" slot="icon" :style="{'background-image': 'url(./static/index_part'+(indexCard+1)+'_'+(index+1)+'.png)'}">
 				</view>
 			</u-cell-item>
 		</u-cell-group>
