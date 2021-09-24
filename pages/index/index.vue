@@ -33,12 +33,14 @@
 
 		<u-cell-group v-for="(itemCard,indexCard) in items">
 			<view class="center_title">{{itemCard.name}}</view>
-			<u-cell-item @click="onClick(item.url)" :title="item.title" :label="item.lable"
-				v-for="(item,index) in itemCard.part"
-				:title-style="{'font-size':'36rpx','color':'#000','letter-spacing': '2rpx'}" :arrow="true">
-				<view class="icon" slot="icon"
-					:style="{'background-image': 'url(./static/index_part'+(indexCard+1)+'_'+(index+1)+'.png)'}">
+			<u-cell-item v-for="(item,index) in itemCard.pileReportType" @click="getDetail(item.code)"
+				:title="item.name" :title-style="{'font-size':'36rpx','color':'#000','letter-spacing': '2rpx'}"
+				:arrow="true">
+				<view class="icon" slot="icon" :style="{'background-image': 'url('+baseUrl+item.icon+''}">
 				</view>
+				<!-- <view class="icon" slot="icon"
+					:style="{'background-image': 'url('+item.icon+')'}">
+				</view> -->
 			</u-cell-item>
 		</u-cell-group>
 
@@ -62,14 +64,24 @@
 	export default {
 		data() {
 			return {
-				items:[],//首页列表
-				
+				items: [], //菜单列表
+				baseUrl: 'http://172.16.66.142:8180/pile_yw' //图片前缀地址
 			}
 		},
-		onLoad() {
-
+		mounted() {
+			this.getList() //获取菜单列表
 		},
 		methods: {
+			// 获取菜单列表
+			async getList() {
+				const res = await this.$u.api.request('/baseInfo/category_list')
+				this.items = res.content
+			},
+			getDetail(code) {
+				uni.navigateTo({
+					url: '../items/main/index2?code=' + code + ''
+				})
+			},
 			onClick(path) {
 				this.$u.route({
 					url: path

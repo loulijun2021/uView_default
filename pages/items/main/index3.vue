@@ -1,13 +1,12 @@
 <template>
 	<view>
-		
+
 		<u-cell-group>
-			<u-cell-item 	v-for="item in items"
-							@click="getNext(item.title)"
-							:title-style="{'color':'#000','font-size':'32rpx','letter-spacing':'2rpx'}"
-							:title="item.title"></u-cell-item>
+			<u-cell-item v-for="item in items" @click="getDetail(item.name)"
+				:title-style="{'color':'#000','font-size':'32rpx','letter-spacing':'2rpx'}" :title="item.name">
+			</u-cell-item>
 		</u-cell-group>
-		
+
 		<view class="footer">
 			<view @click="getBack">查看专项介绍</view>
 			<view @click="makePhoneCall">非专项举报电话12309</view>
@@ -16,33 +15,37 @@
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-				items:[
-					{"title":"安全生产"},
-					{"title":"个人信息保护"},
-					{"title":"生态环境和资源保护"},
-					{"title":"食品药品安全"},
-					{"title":"国有财产"},
-					{"title":"国有土地使用权出让"},
-					{"title":"英雄烈士保护"},
-					{"title":"其他侵害不特定人群的公共利益"},
-				]
+	export default {
+		data() {
+			return {
+				items: [],
+				parentCode: '' ,//父节点
+				parentName:'',//父节点名称
 			}
 		},
-		methods:{
-			getNext(title){
+		onLoad(option) {
+			this.parentCode = option.parentCode
+			this.parentName = option.name
+		},
+		mounted() {
+			this.getList()
+		},
+		methods: {
+			async getList() {
+				const res = await this.$u.api.request('/baseInfo/subcategory_list?parentCode=' + this.parentCode)
+				this.items=res.Subcategory
+			},
+			getDetail(name) {
 				uni.navigateTo({
-					url:'./wildAnimals?title='+title+''
+					url: './index4?name=' + name + '&parentName='+this.parentName+'&parentCode='+this.parentCode+''
 				})
 			},
-			getBack(){
+			getBack() {
 				uni.navigateBack({
-					
+
 				})
 			},
-			makePhoneCall(){
+			makePhoneCall() {
 				uni.makePhoneCall({
 					phoneNumber: '12309'
 				})
@@ -54,10 +57,10 @@
 <style lang="scss" scoped>
 	page {
 		background-color: #f5f5f5;
-		padding:0 8rpx;
+		padding: 0 8rpx;
 	}
-	
-	.footer{
+
+	.footer {
 		position: fixed;
 		bottom: 2%;
 		width: 100%;

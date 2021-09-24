@@ -248,6 +248,7 @@
 			}
 		},
 		mounted() {
+			
 			if (this.form.type === '') {
 				this.form.type = this.placeholderSelectTitle
 			}

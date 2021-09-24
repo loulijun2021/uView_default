@@ -8,15 +8,21 @@
 const install = (Vue, vm) => {
 	// 此处没有使用传入的params参数
 	let getUniqueId = (params = {}) => vm.$u.get('/report/unique_id', params);
-	
+
 	// 此处使用了传入的params参数，一切自定义即可
-	// let commitReport = (params = {}) => vm.$u.post('/report/commit', params);
 	let commitReport = (params = {}) => vm.$u.post('/report/commit', params);
+
+	// 统一接口
+	let request = (params = {}) => vm.$u.get(params);
 	
-	let common = (params = {}) => vm.$u.get('',params);
-	
+
 	// 将各个定义的接口名称，统一放进对象挂载到vm.$u.api(因为vm就是this，也即this.$u.api)下
-	vm.$u.api = {getUniqueId, commitReport, common};
+	vm.$u.api = {
+		getUniqueId,
+		commitReport,
+		request,
+		
+	};
 }
 
 export default {

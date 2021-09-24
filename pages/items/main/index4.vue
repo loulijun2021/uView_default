@@ -1,8 +1,6 @@
 <template>
-	<formComponent 	title="侵害公益专项" 
-					:placeholderSelectTitle="placeholderSelectTitle"
-					:actionSheetList="actionSheetList">
-	</formComponent>
+	<formComponent :title="parentName" :placeholderSelectTitle="placeholderSelectTitle"
+		:actionSheetList="actionSheetList"></formComponent>
 </template>
 
 <script>
@@ -13,40 +11,32 @@
 		},
 		data() {
 			return {
-				actionSheetList: [{
-					value: 7001,
-					text: '安全生产'
-				}, {
-					value: 7002,
-					text: '个人信息保护'
-				}, {
-					value: 7003,
-					text: '生态环境和资源保护',
-				}, {
-					value: 7004,
-					text: '食品药品安全',
-				}, {
-					value: 7005,
-					text: '国有财产'
-				}, {
-					value: 7006,
-					text: '国有土地使用权出让',
-				}, {
-					value: 7007,
-					text: '英雄烈士保护',
-				}, {
-					value: 7008,
-					text: '其他侵害不特定人群的公共利益',
-				}],
+				items: [],
+				parentName: '', //父节点名称
+				parentCode: '', //父节点代码
+				actionSheetList: [],
 			}
 		},
 		onLoad(option) {
-			this.placeholderSelectTitle = option.title
+			this.placeholderSelectTitle = option.name
+			this.parentName = option.parentName
+			this.parentCode = option.parentCode
+			console.log(placeholderSelectTitle)
+		},
+		mounted() {
+			this.getList()
 		},
 		methods: {
-
-		},
-
+			async getList() {
+				const res = await this.$u.api.request('/baseInfo/subcategory_list?parentCode=' + this.parentCode)
+				for (var i = 0; i < res.Subcategory.length; i++) {
+					this.actionSheetList.push({
+						value: res.Subcategory[i].name,
+						text: res.Subcategory[i].name
+					})
+				}
+			}
+		}
 	}
 </script>
 
