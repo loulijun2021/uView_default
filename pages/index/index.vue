@@ -29,44 +29,32 @@
 			<view class="top_phone" @click="makePhoneCall">非专项举报电话12309</view>
 		</view>
 
+
+
 		<u-cell-group v-for="(itemCard,indexCard) in items">
 			<view class="center_title">{{itemCard.name}}</view>
-			<u-cell-item @click="onClick(item.url)" 
-				:title="item.title" 
-				:label="item.lable"
+			<u-cell-item @click="onClick(item.url)" :title="item.title" :label="item.lable"
 				v-for="(item,index) in itemCard.part"
 				:title-style="{'font-size':'36rpx','color':'#000','letter-spacing': '2rpx'}" :arrow="true">
-				<view class="icon" slot="icon" :style="{'background-image': 'url(./static/index_part'+(indexCard+1)+'_'+(index+1)+'.png)'}">
+				<view class="icon" slot="icon"
+					:style="{'background-image': 'url(./static/index_part'+(indexCard+1)+'_'+(index+1)+'.png)'}">
 				</view>
 			</u-cell-item>
 		</u-cell-group>
-		
-		
+
+
+		<!-- 我的举报记录 -->
 		<u-cell-group style="display: flex;justify-content: center;">
-			<u-cell-item
-			@click="onClick('pages/items/record/record')"
-			title="我的举报记录"
-			:title-style="{'font-size':'28rpx','color':'#d2d2d2','letter-spacing': '2rpx'}" 
-			style="height: 68rpx;"
-			></u-cell-item>
+			<u-cell-item @click="onClick('pages/items/record/record')" title="我的举报记录"
+				:title-style="{'font-size':'28rpx','color':'#d2d2d2','letter-spacing': '2rpx'}" style="height: 68rpx;">
+			</u-cell-item>
 		</u-cell-group>
-		
-		<!-- <u-gap height="20" bg-color="#eee"></u-gap> -->
-		
-		<!-- <view class="wrap">
-			<u-swiper 	:list="list" 
-						mode="rect"
-						 :title="true" 
-						 @click="clickImg(list)"
-						 img-mode="aspectFit"
-						 :title-style="{'color':'red','background-color':'none'}"
-						 :autoplay="false"
-						 interval="5000">
-			
-			</u-swiper>
-		</view> -->
-		
-		<view class="footer">杭州市人民检察院 0571-88810901</view>
+
+
+
+
+
+		<view class="footer">义乌市人民检察院 0579-85329126</view>
 	</view>
 </template>
 
@@ -74,58 +62,14 @@
 	export default {
 		data() {
 			return {
-				items: [{
-						'name': '公益诉讼',
-						'part': [{
-							'url': 'pages/items/wildAnimals/index2',
-							'title': '侵害公益专项',
-							// 'lable': '此处需加一段描述'
-						}],
-					},
-					{
-						'name': '未成年人保护',
-						'part': [{
-							'url': 'pages/items/mandatoryReporting/index2',
-							'title': '强制报告专项',
-							// 'lable': '医疗、教育等行业人员发现孩子被侵害的线索，必须立即举报'
-						}, {
-							'url': 'pages/items/campusSecurity/index2',
-							'title': '校园安全专项',
-							// 'lable': '全面净化校园环境，助力孩子健康成长'
-						}, {
-							'url': 'pages/items/familyProtection/index2',
-							'title': '家庭保护专项',
-							// 'lable': '此处需加一段描述'
-						}, {
-							'url': 'pages/items/againstMinors/index2',
-							'title': '其他侵害未成年人情形',
-							// 'lable': '严防各种侵犯未成年人的非法行为'
-						}]
-					}
-				],
-				// list: [{
-				// 		image: '../../static/gyss.png',
-				// 		title: '什么是专项公益诉讼',
-						
-				// 	},
-				// 	{
-				// 		image: '../../static/index_part2_1.png',
-				// 		title: '强制报告是什么'
-				// 	},
-				// 	{
-				// 		image: '../../static/index_part2_2.png',
-				// 		title: '什么是未成年人法律法律监督？'
-				// 	}
-				// ],
+				items:[],//首页列表
+				
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-			// clickImg(param){
-			// 	console.log(param)
-			// },
 			onClick(path) {
 				this.$u.route({
 					url: path
@@ -136,7 +80,7 @@
 					phoneNumber: '12309'
 				})
 			},
-			
+
 		}
 	}
 </script>
@@ -192,11 +136,6 @@
 				border-left: 7rpx solid #255BDA;
 				height: 30rpx;
 				margin: auto 15rpx;
-				// background-image: url(../../static/tx-fill-pxsbx.png) ;
-				// background-repeat:no-repeat;
-				// width: 38rpx;
-				// background-size: 84% 119%;
-				// margin: -10rpx 20rpx 0 0;
 			}
 
 			.top_title {
@@ -226,24 +165,30 @@
 		margin: auto 30rpx;
 		padding-top: 20rpx;
 		font-size: 26rpx;
-		margin: ao;
+		// margin: auo;
 	}
 
-	.u-cell {
-		height: 140rpx;
-	}
-	
-	// .wrap {
-		// padding: 20rpx 0;
-		// background-color: #eee;
-		// .u-swiper-image[data-v-a5b2d580]{
-		// 	width: 30% !important;
-		// }
+	// .ellipsis::after{
+	// 	content: "...";
+	// 	display: inline;
 	// }
-	
+	// .u-cell {
+	// 	height: 140rpx;
+	// }
+
+	// .wrap {
+	// padding: 20rpx 0;
+	// background-color: #eee;
+	// .u-swiper-image[data-v-a5b2d580]{
+	// 	width: 30% !important;
+	// }
+	// }
+
 	.footer {
-		position: fixed;
-		bottom: 2%;
+		// position: fixed;
+		// bottom: 2%;
+		// background-color: #f5f5f5;
+		line-height: 100rpx;
 		width: 100%;
 		text-align: center;
 		font-size: 24rpx;

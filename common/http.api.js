@@ -13,8 +13,10 @@ const install = (Vue, vm) => {
 	// let commitReport = (params = {}) => vm.$u.post('/report/commit', params);
 	let commitReport = (params = {}) => vm.$u.post('/report/commit', params);
 	
+	let common = (params = {}) => vm.$u.get('',params);
+	
 	// 将各个定义的接口名称，统一放进对象挂载到vm.$u.api(因为vm就是this，也即this.$u.api)下
-	vm.$u.api = {getUniqueId, commitReport};
+	vm.$u.api = {getUniqueId, commitReport, common};
 }
 
 export default {
