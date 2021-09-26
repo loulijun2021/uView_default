@@ -8,6 +8,18 @@
 			"style": {
 				// "navigationBarTitleText": "uView-index"
 			}
+		},{
+			"path": "pages/index/index2"
+		},{
+			"path": "pages/index/index3"
+		},{
+			"path": "pages/index/index4"
+		},{
+			"path": "pages/index/formComponent"
+		},{
+			"path": "pages/index/record"
+		},{
+			"path": "pages/index/queryRecord"
 		},
 		{
 			"path": "pages/center/index",

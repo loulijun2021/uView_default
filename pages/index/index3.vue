@@ -34,14 +34,11 @@
 			async getList() {
 				const res = await this.$u.api.request('/baseInfo/subcategory_list?parentCode=' + this.parentCode)
 				this.items=res.Subcategory
-				// console.log(this.items)
 			},
 			getDetail(name) {
 				uni.navigateTo({
 					url: './index4?name=' + name + '&parentName='+this.parentName+'&parentCode='+this.parentCode+''
 				})
-				
-			
 			},
 			getBack() {
 				uni.navigateBack({

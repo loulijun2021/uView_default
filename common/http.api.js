@@ -7,10 +7,10 @@
 // https://uviewui.com/js/http.html#%E4%BD%95%E8%B0%93%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%EF%BC%9F
 const install = (Vue, vm) => {
 	// 此处没有使用传入的params参数
-	let getUniqueId = (params = {}) => vm.$u.get('/report/unique_id', params);
+	let getUniqueId = (params = {}) => vm.$u.get('/unique_id', params);
 
 	// 此处使用了传入的params参数，一切自定义即可
-	let commitReport = (params = {}) => vm.$u.post('/report/commit', params);
+	let commitReport = (params = {}) => vm.$u.post('/commit', params);
 
 	// 统一接口
 	let request = (params = {}) => vm.$u.get(params);

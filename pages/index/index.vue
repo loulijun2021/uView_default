@@ -33,7 +33,7 @@
 
 		<u-cell-group v-for="(itemCard,indexCard) in items">
 			<view class="center_title">{{itemCard.name}}</view>
-			<u-cell-item v-for="(item,index) in itemCard.pileReportType" @click="getDetail(item.code)"
+			<u-cell-item v-for="(item,index) in itemCard.children" @click="getDetail(item.code)"
 				:title="item.name" :title-style="{'font-size':'36rpx','color':'#000','letter-spacing': '2rpx'}"
 				:arrow="true">
 				<view class="icon" slot="icon" :style="{'background-image': 'url('+baseUrl+item.icon+''}">
@@ -47,7 +47,7 @@
 
 		<!-- 我的举报记录 -->
 		<u-cell-group style="display: flex;justify-content: center;">
-			<u-cell-item @click="onClick('pages/items/record/record')" title="我的举报记录"
+			<u-cell-item @click="getRecord" title="我的举报记录"
 				:title-style="{'font-size':'28rpx','color':'#d2d2d2','letter-spacing': '2rpx'}" style="height: 68rpx;">
 			</u-cell-item>
 		</u-cell-group>
@@ -79,7 +79,12 @@
 			},
 			getDetail(code) {
 				uni.navigateTo({
-					url: '../items/main/index2?code=' + code + ''
+					url: './index2?code=' + code + ''
+				})
+			},
+			getRecord(){
+				uni.navigateTo({
+					url: './record'
 				})
 			},
 			onClick(path) {

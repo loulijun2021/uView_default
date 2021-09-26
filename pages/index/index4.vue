@@ -4,7 +4,7 @@
 </template>
 
 <script>
-	import formComponent from '../formComponent.vue'
+	import formComponent from './formComponent.vue'
 	export default {
 		components: {
 			formComponent
