@@ -186,7 +186,7 @@
 	}
 
 	.footer {
-		position: fixed;
+		// position: fixed;
 		bottom:0;
 		// bottom: 2%;
 		// background-color: #f5f5f5;

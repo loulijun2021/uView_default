@@ -21,7 +21,6 @@
 			this.placeholderSelectTitle = option.name
 			this.parentName = option.parentName
 			this.parentCode = option.parentCode
-			
 		},
 		mounted() {
 			this.getList()
@@ -29,7 +28,6 @@
 		methods: {
 			async getList() {
 				const res = await this.$u.api.request('/baseInfo/subcategory_list?parentCode=' + this.parentCode)
-				console.log(res)
 				for (var i = 0; i < res.Subcategory.length; i++) {
 					this.actionSheetList.push({
 						value: res.Subcategory[i].code,

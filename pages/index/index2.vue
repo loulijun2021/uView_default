@@ -28,7 +28,7 @@
 		methods: {
 			async getIntroduce() {
 				const res = await this.$u.api.request('/baseInfo/category_info?code=' + this.code)
-				this.items = res.categoryInfo			
+				this.items = res.content		
 			},
 			getNext() {
 				uni.navigateTo({

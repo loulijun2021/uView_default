@@ -36,8 +36,10 @@
 				<u-form-item label="联系电话" prop="phone">
 					<u-input v-model="form.phone" placeholder="选填" />
 				</u-form-item>
-				<u-form-item label="线索图片" prop="phone">
-					<u-upload width="160" height="160" class="uploader" :form-data="{unique_id:uniqueId}" ref="uUpload"
+				<u-form-item label="线索图片">
+					<!-- 限制图片上传的大小和格式 -->
+					<u-upload :max-size="5 * 1024 * 1024" multiple :limitType="['png', 'jpg']"
+					width="160" height="160" class="uploader" :form-data="{unique_id:uniqueId}" ref="uUpload"
 						:action="action" :file-list="fileList"></u-upload>
 				</u-form-item>
 				<u-gap height="20" bg-color="#eee"></u-gap>
@@ -78,6 +80,30 @@
 			textCounter
 		},
 		data() {
+
+			// 校验举报对象的名字
+			const validateName = (rule, value, callback) => {
+				if (value.length > 25) {
+
+					// alert('名字长度不能超过25个字')
+					callback(new Error('名字长度不能超过25个字'))
+				} else {
+					callback()
+				}
+			}
+			//校验举报对象的电话号码
+			const validatePhone = (rule, value, callback) => {
+				// 手机和座机号码的正则表达式
+				let regexshouji = /^1[3|4|5|7|8][0-9]{9}$/; //手机
+				let regexzuoji = /^0\d{2,3}-\d{7,8}|\(?0\d{2,3}[)-]?\d{7,8}|\(?0\d{2,3}[)-]*\d{7,8}$/; //座机
+				// let regex =/(^(\d{3,4}-)?\d{7,8})$|(^0?(13[0-9]|15[012356789]|18[0-9]|14[57])[0-9]{8})$/;
+				if (!(regexshouji.exec(value) || regexzuoji.exec(value))) {
+					console.log('请输入正确的联系电话')
+					callback(new Error('请输入正确的联系电话'))
+				} else {
+					callback()
+				}
+			}
 			return {
 				modelShow: false,
 				uniqueId: '',
@@ -85,6 +111,17 @@
 				action: imageUploadUrl,
 				fileList: [],
 				loading: false,
+				show: false,
+				form: {
+					type: '', //类型
+					place: '', //地点
+					desc: '', //描述
+					object: '', //被举报的对象
+					name: '', //被举报的对象中的名字
+					phone: '', //被举报对象的电话号码
+					people: '', //举报人
+					tel: '' //举报人电话号码
+				},
 				rules: {
 					type: [{
 						required: true,
@@ -100,19 +137,26 @@
 						required: true,
 						message: '请输入线索描述',
 						trigger: ['change', 'blur'],
-					}]
+					}],
+					name: [{
+						// required:false,
+						validator: validateName,
+						trigger: ['change', 'blur'],
+					}],
+					phone: [{
+						// required:false,
+						validator: validatePhone,
+						trigger: ['change']
+					}],
+					people: [{
+						validator: validateName,
+						trigger: ['change', 'blur']
+					}],
+					tel: [{
+						validator: validatePhone,
+						trigger: ['change']
+					}],
 				},
-				show: false,
-				form: {
-					type: '',
-					place: '',
-					desc: '',
-					object: '',
-					name: '',
-					phone: '',
-					people: '',
-					tel: ''
-				}
 			}
 		},
 		methods: {
@@ -197,15 +241,12 @@
 							reportCode: this.actionSheetList.find(find => find.text == _this.form.type)
 								.value //投诉专项编码
 						}
-
-
 						this.$u.api.commitReport(req).then(res => {
-							console.log(res)
 							this.loading = false
 							if (res.status) {
 								this.$refs.uForm.resetFields()
 								this.$refs.uUpload.clear()
-								
+
 								this.next()
 							} else {
 								this.$refs.uToast.show({
@@ -215,7 +256,6 @@
 								})
 							}
 						}).catch(err => {
-							console.log(err)
 							this.loading = false
 							this.$refs.uToast.show({
 								title: res.message || '操作失败',
@@ -223,7 +263,7 @@
 							})
 						})
 					} else {
-						console.log(123)
+						console.log('123')
 					}
 				});
 			},
@@ -233,8 +273,8 @@
 				});
 			},
 			async getUniqueId() {
-				let u = await this.$u.api.getUniqueId() //暂时注释
-				this.uniqueId = u.id
+				// let u = await this.$u.api.getUniqueId() //暂时注释
+				// this.uniqueId = u.id
 			},
 			next() {
 				// this.getUniqueId()
@@ -248,7 +288,7 @@
 			}
 		},
 		mounted() {
-			
+
 			if (this.form.type === '') {
 				this.form.type = this.placeholderSelectTitle
 			}
