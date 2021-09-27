@@ -9,7 +9,7 @@
 
 		<view class="footer">
 			<view @click="getBack">查看专项介绍</view>
-			<view @click="makePhoneCall">非专项举报电话12309</view>
+			<!-- <view @click="makePhoneCall">非专项举报电话12309</view> -->
 		</view>
 	</view>
 </template>

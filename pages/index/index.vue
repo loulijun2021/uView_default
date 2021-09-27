@@ -26,7 +26,7 @@
 				<view class="top_line"></view>
 				<view class="top_title">我要举报</view>
 			</view>
-			<view class="top_phone" @click="makePhoneCall">非专项举报电话12309</view>
+			<!-- <view class="top_phone" @click="makePhoneCall">非专项举报电话12309</view> -->
 		</view>
 
 
@@ -46,12 +46,12 @@
 
 
 		<!-- 我的举报记录 -->
-		<u-cell-group style="display: flex;justify-content: center;">
-			<u-cell-item @click="getRecord" title="我的举报记录"
-				:title-style="{'font-size':'28rpx','color':'#d2d2d2','letter-spacing': '2rpx'}" style="height: 68rpx;">
-			</u-cell-item>
-		</u-cell-group>
-
+			<!-- <u-cell-group style="display: flex;justify-content: center;">
+				<u-cell-item @click="getRecord" title="我的举报记录"
+					:title-style="{'font-size':'28rpx','color':'#d2d2d2','letter-spacing': '2rpx'}" style="height: 68rpx;">
+				</u-cell-item>
+			</u-cell-group>
+ -->
 
 
 
@@ -162,10 +162,10 @@
 			}
 		}
 
-		.top_phone {
-			margin: auto 0;
-			color: #4992e3;
-		}
+		// .top_phone {
+		// 	margin: auto 0;
+		// 	color: #4992e3;
+		// }
 	}
 
 	.slot-wrap {
@@ -185,24 +185,9 @@
 		// margin: auo;
 	}
 
-	// .ellipsis::after{
-	// 	content: "...";
-	// 	display: inline;
-	// }
-	// .u-cell {
-	// 	height: 140rpx;
-	// }
-
-	// .wrap {
-	// padding: 20rpx 0;
-	// background-color: #eee;
-	// .u-swiper-image[data-v-a5b2d580]{
-	// 	width: 30% !important;
-	// }
-	// }
-
 	.footer {
-		// position: fixed;
+		position: fixed;
+		bottom:0;
 		// bottom: 2%;
 		// background-color: #f5f5f5;
 		line-height: 100rpx;

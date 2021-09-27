@@ -20,144 +20,14 @@
 			"path": "pages/index/record"
 		},{
 			"path": "pages/index/queryRecord"
+		},{
+			"path": "pages/index/recordDetail"
 		},
 		{
 			"path": "pages/center/index",
 			"style": {
 				// "navigationBarTitleText": "uView-center"
 			}
-		}, {
-			"path": "pages/items/wildAnimals/wildAnimals",
-			"style": {
-				"navigationBarTitleText": "侵害公益专项",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/items/wildAnimals/index2",
-			"style": {
-				"navigationBarTitleText": "侵害公益专项",
-				// "navigationStyle":"custom",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/items/wildAnimals/index3",
-			"style": {
-				"navigationBarTitleText": "侵害公益专项"
-			}
-		}, {
-			"path": "pages/items/qiantangRiver/qiantangRiver",
-			"style": {
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/items/healthProducts/healthProducts",
-			"style": {
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/items/mandatoryReporting/mandatoryReporting",
-			"style": {
-				"navigationBarTitleText": "强制报告专项举报",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/items/mandatoryReporting/index2",
-			"style": {
-				"navigationBarTitleText": "强制报告专项",
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/items/mandatoryReporting/index3",
-			"style": {
-				"navigationBarTitleText": "强制报告专项举报",
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/items/campusSecurity/campusSecurity",
-			"style": {
-				"navigationBarTitleText": "校园安全专项",
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/items/campusSecurity/index2",
-			"style": {
-				"navigationBarTitleText": "校园安全专项"
-			}
-		}, {
-			"path": "pages/items/campusSecurity/index3",
-			"style": {
-				"navigationBarTitleText": "校园安全专项"
-			}
-		},
-		{
-			"path": "pages/items/againstMinors/againstMinors",
-			"style": {
-				"navigationBarTitleText": "其他侵害未成年人行为",
-				"enablePullDownRefresh": false
-			}
-
-		},
-		{
-			"path": "pages/items/againstMinors/index2",
-			"style": {
-				"navigationBarTitleText": "其他侵害未成年人行为"
-			}
-		},
-		{
-			"path": "pages/items/againstMinors/index3",
-			"style": {
-				"navigationBarTitleText": "其他侵害未成年人行为"
-			}
-		},
-		{
-			"path": "pages/items/familyProtection/familyProtection",
-			"style": {
-				"navigationBarTitleText": "家庭保护专项",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/items/familyProtection/index2",
-			"style": {
-				"navigationBarTitleText": "家庭保护专项"
-			}
-		}, {
-			"path": "pages/items/familyProtection/index3",
-			"style": {
-				"navigationBarTitleText": "家庭保护专项"
-			}
-		}, {
-			"path": "pages/items/record/record",
-			"style": {
-				"navigationBarTitleText": "我的举报",
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/items/record/queryRecord",
-			"style": {
-				"navigationBarTitleText": "举报查询",
-				"enablePullDownRefresh": false
-			}
-		}
-	    ,{
-            "path" : "pages/items/main/index2",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/items/main/index3"    
-        },{
-			"path" : "pages/items/main/index4"
-			
 		}
     ],
 	"globalStyle": {
