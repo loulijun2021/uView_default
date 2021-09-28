@@ -38,9 +38,9 @@
 				</u-form-item>
 				<u-form-item label="线索图片">
 					<!-- 限制图片上传的大小和格式 -->
-					<u-upload :max-size="5 * 1024 * 1024" multiple :limitType="['png', 'jpg']"
-					width="160" height="160" class="uploader" :form-data="{unique_id:uniqueId}" ref="uUpload"
-						:action="action" :file-list="fileList"></u-upload>
+					<u-upload :max-size="10 * 1024 * 1024" multiple :limitType="['png', 'jpg']" width="160" height="160"
+						class="uploader" :form-data="{unique_id:uniqueId}" ref="uUpload" :action="action"
+						:file-list="fileList"></u-upload>
 				</u-form-item>
 				<u-gap height="20" bg-color="#eee"></u-gap>
 				<u-form-item label="举报人" prop="people">
@@ -84,24 +84,28 @@
 			// 校验举报对象的名字
 			const validateName = (rule, value, callback) => {
 				if (value.length > 25) {
-
-					// alert('名字长度不能超过25个字')
 					callback(new Error('名字长度不能超过25个字'))
 				} else {
-					callback()
+					return callback()
 				}
 			}
 			//校验举报对象的电话号码
 			const validatePhone = (rule, value, callback) => {
 				// 手机和座机号码的正则表达式
-				let regexshouji = /^1[3|4|5|7|8][0-9]{9}$/; //手机
-				let regexzuoji = /^0\d{2,3}-\d{7,8}|\(?0\d{2,3}[)-]?\d{7,8}|\(?0\d{2,3}[)-]*\d{7,8}$/; //座机
-				// let regex =/(^(\d{3,4}-)?\d{7,8})$|(^0?(13[0-9]|15[012356789]|18[0-9]|14[57])[0-9]{8})$/;
-				if (!(regexshouji.exec(value) || regexzuoji.exec(value))) {
-					console.log('请输入正确的联系电话')
-					callback(new Error('请输入正确的联系电话'))
+				const regexshouji = /^1[3|4|5|7|8][0-9]{9}$/; //手机
+				const regexzuoji = /^\d{3}-\d{7,8}|\d{4}-\d{7,8}$/; //座机
+				// const regex =/(^(\d{3,4}-)?\d{7,8})$|(^0?(13[0-9]|15[012356789]|18[0-9]|14[57])[0-9]{8})$/;
+
+				if (value.length !== 0) {
+					if (!(regexshouji.exec(value) || regexzuoji.exec(value))) {
+						// console.log('请输入正确的联系电话')
+
+						callback(new Error('请输入正确的联系电话'))
+					} else {
+						return callback()
+					}
 				} else {
-					callback()
+					return callback()
 				}
 			}
 			return {
@@ -139,20 +143,22 @@
 						trigger: ['change', 'blur'],
 					}],
 					name: [{
-						// required:false,
+						required: false,
 						validator: validateName,
 						trigger: ['change', 'blur'],
 					}],
 					phone: [{
-						// required:false,
+						required: false,
 						validator: validatePhone,
-						trigger: ['change']
+						trigger: 'change'
 					}],
 					people: [{
+						required: false,
 						validator: validateName,
 						trigger: ['change', 'blur']
 					}],
 					tel: [{
+						required:false,
 						validator: validatePhone,
 						trigger: ['change']
 					}],
@@ -178,7 +184,6 @@
 						} = currentLocation
 						uni.chooseLocation({
 							success: res => {
-								this.$u.toast(res)
 								let name = res.name
 								this.form.place = name
 								if (name == '我的位置') {
@@ -189,7 +194,7 @@
 								} else {
 									this.fullAddress = formatLocation(res)
 								}
-								this.$u.toast(this.fullAddress)
+								// this.$u.toast(this.fullAddress)
 							},
 						})
 					}
@@ -273,8 +278,8 @@
 				});
 			},
 			async getUniqueId() {
-				// let u = await this.$u.api.getUniqueId() //暂时注释
-				// this.uniqueId = u.id
+				let u = await this.$u.api.getUniqueId()
+				this.uniqueId = u.id
 			},
 			next() {
 				// this.getUniqueId()

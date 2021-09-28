@@ -76,6 +76,7 @@
 			async getList() {
 				const res = await this.$u.api.request('/baseInfo/category_list')
 				this.items = res.content
+				// console.log(this.items)
 			},
 			getDetail(code) {
 				uni.navigateTo({
